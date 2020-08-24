@@ -11,7 +11,7 @@
         <result property="title" column="title"/>
         <result property="content" column="content"/>
     </resultMap>
-    <select id="getDemoById" resultType="Demo">
+    <select id="getDemoById" resultType="com.jumota.uoolo.auth.entity.Demo">
         select *
         from demo_info a
         where a.id = #{id}
