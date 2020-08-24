@@ -4,7 +4,7 @@ server:
 
 spring:
   application:
-    name: jumota-auth-service
+    name: @artifactId@
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
