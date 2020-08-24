@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.uoolo.jumotacloud</groupId>
+  <artifactId>JumotaCloud</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <modules>
+    <module>jumota-auth</module>
+  </modules>
+  <packaging>pom</packaging>
+  <name>JumotaCloud</name>
+  <url>https://www.jumota.com/</url>
+  <inceptionYear>2020</inceptionYear>
+
+  <distributionManagement>
+    <site>
+      <id>website</id>
+      <url>scp://webhost.company.com/www/website</url>
+    </site>
+  </distributionManagement>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
+    <spring-cloud.version>Hoxton.SR7</spring-cloud.version>
+    <spring-platform.version>Cairo-SR7</spring-platform.version><!-- https://github.com/swagger-api/swagger-core -->
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <hutool.version>5.4.0</hutool.version><!-- A set of tools that keep Java sweet. -->
+    <mybatis-plus.version>3.3.2</mybatis-plus.version><!-- An powerful enhanced toolkit of MyBatis for simplify development -->
+    <druid.version>1.1.23</druid.version><!-- 阿里巴巴计算平台事业部出品，为监控而生的数据库连接池 -->
+    <mysql.connector.version>8.0.16</mysql.connector.version>
+    <swagger.core.version>2.1.4</swagger.core.version><!-- https://github.com/swagger-api/swagger-core -->
+  </properties>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-dependencies</artifactId>
+        <version>${spring-boot.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>io.spring.platform</groupId>
+        <artifactId>platform-bom</artifactId>
+        <version>${spring-platform.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-dependencies</artifactId>
+        <version>${spring-cloud.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <!--web 模块-->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+        <version>${spring-boot.version}</version>
+        <exclusions>
+          <!--排除tomcat依赖-->
+          <exclusion>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <groupId>org.springframework.boot</groupId>
+          </exclusion>
+        </exclusions>
+      </dependency>
+      <!--mybatis plus extension,包含了mybatis plus core-->
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-extension</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
+      <!--mybatis-->
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatis-plus.version}</version>
+      </dependency>
+      <!-- druid 连接池 -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid-spring-boot-starter</artifactId>
+        <version>${druid.version}</version>
+      </dependency>
+      <!--mysql 驱动-->
+      <dependency>
+        <groupId>mysql</groupId>
+        <artifactId>mysql-connector-java</artifactId>
+        <version>${mysql.connector.version}</version>
+      </dependency>
+      <!--swagger 最新依赖内置版本-->
+      <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-models</artifactId>
+        <version>${swagger.core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.swagger</groupId>
+        <artifactId>swagger-annotations</artifactId>
+        <version>${swagger.core.version}</version>
+      </dependency>
+      <!-- RabbitMQ -->
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-amqp</artifactId>
+        <version>${spring-boot.version}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+  <!-- Maven中国镜像地址 参考：https://www.cnblogs.com/shuaiandjun/p/7604619.html -->
+  <repositories>
+    <repository>
+      <id>maven-net-cn</id>
+      <name>Maven China Mirror</name>
+      <url>http://maven.net.cn/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>maven-net-cn</id>
+      <name>Maven China Mirror</name>
+      <url>http://maven.net.cn/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+
+  <profiles>
+    <profile>
+      <id>dev</id>
+      <properties>
+        <!-- 环境标识，需要与配置文件的名称相对应 -->
+        <profiles.active>dev</profiles.active>
+      </properties>
+      <activation>
+        <!-- 默认环境 -->
+        <activeByDefault>true</activeByDefault>
+      </activation>
+    </profile>
+    <profile>
+      <id>test</id>
+      <properties>
+        <profiles.active>test</profiles.active>
+      </properties>
+    </profile>
+    <profile>
+      <id>uat</id>
+      <properties>
+        <profiles.active>uat</profiles.active>
+      </properties>
+    </profile>
+    <profile>
+      <id>prod</id>
+      <properties>
+        <profiles.active>prod</profiles.active>
+      </properties>
+    </profile>
+  </profiles>
+
+  <build>
+    <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
+      <plugins>
+        <plugin>
+          <artifactId>maven-clean-plugin</artifactId>
+          <version>3.1.0</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-site-plugin</artifactId>
+          <version>3.7.1</version>
+        </plugin>
+        <plugin>
+          <artifactId>maven-project-info-reports-plugin</artifactId>
+          <version>3.0.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <locales>en,fr</locales>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting>
+    <plugins>
+      <plugin>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </reporting>
+</project>
