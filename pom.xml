@@ -113,37 +113,43 @@
         <artifactId>spring-boot-starter-amqp</artifactId>
         <version>${spring-boot.version}</version>
       </dependency>
+      <!--Lombok-->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <scope>provided</scope>
+      </dependency>
 
     </dependencies>
   </dependencyManagement>
 
   <!-- Maven中国镜像地址 参考：https://www.cnblogs.com/shuaiandjun/p/7604619.html -->
-  <repositories>
-    <repository>
-      <id>maven-net-cn</id>
-      <name>Maven China Mirror</name>
-      <url>http://maven.net.cn/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>maven-net-cn</id>
-      <name>Maven China Mirror</name>
-      <url>http://maven.net.cn/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
+<!--  <repositories>-->
+<!--    <repository>-->
+<!--      <id>maven-net-cn</id>-->
+<!--      <name>Maven China Mirror</name>-->
+<!--      <url>http://maven.net.cn/content/groups/public/</url>-->
+<!--      <releases>-->
+<!--        <enabled>true</enabled>-->
+<!--      </releases>-->
+<!--      <snapshots>-->
+<!--        <enabled>false</enabled>-->
+<!--      </snapshots>-->
+<!--    </repository>-->
+<!--  </repositories>-->
+<!--  <pluginRepositories>-->
+<!--    <pluginRepository>-->
+<!--      <id>maven-net-cn</id>-->
+<!--      <name>Maven China Mirror</name>-->
+<!--      <url>http://maven.net.cn/content/groups/public/</url>-->
+<!--      <releases>-->
+<!--        <enabled>true</enabled>-->
+<!--      </releases>-->
+<!--      <snapshots>-->
+<!--        <enabled>false</enabled>-->
+<!--      </snapshots>-->
+<!--    </pluginRepository>-->
+<!--  </pluginRepositories>-->
 
   <profiles>
     <profile>
