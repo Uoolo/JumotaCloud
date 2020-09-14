@@ -1,4 +1,4 @@
-package com.jumota.uoolo.auth.entity;
+package com.uoolo.jumota.auth.entity;
 
 import lombok.Data;
 

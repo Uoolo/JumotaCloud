@@ -1,7 +1,6 @@
-package com.jumota.uoolo.auth.mapper;
+package com.uoolo.jumota.auth.mapper;
 
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.jumota.uoolo.auth.entity.Demo;
+import com.uoolo.jumota.auth.entity.Demo;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

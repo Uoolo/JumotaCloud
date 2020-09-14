@@ -1,8 +1,8 @@
-package com.jumota.uoolo.auth.controller;
+package com.uoolo.jumota.auth.controller;
 
 import com.baomidou.mybatisplus.extension.api.R;
-import com.jumota.uoolo.auth.entity.Demo;
-import com.jumota.uoolo.auth.service.DemoService;
+import com.uoolo.jumota.auth.entity.Demo;
+import com.uoolo.jumota.auth.service.DemoService;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

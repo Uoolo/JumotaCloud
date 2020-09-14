@@ -58,7 +58,7 @@
 <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
 <!--                &lt;!&ndash;以下fork为true必须添加&ndash;&gt;-->
 <!--                <configuration>-->
-<!--                    <mainClass>com.jumota.uoolo.auth.App</mainClass>-->
+<!--                    <mainClass>App</mainClass>-->
 <!--                    <fork>true</fork>-->
 <!--                    <addResources>true</addResources>-->
 <!--                </configuration>-->

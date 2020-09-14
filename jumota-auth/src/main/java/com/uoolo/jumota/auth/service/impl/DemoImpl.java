@@ -1,10 +1,8 @@
-package com.jumota.uoolo.auth.service.impl;
+package com.uoolo.jumota.auth.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.jumota.uoolo.auth.entity.Demo;
-import com.jumota.uoolo.auth.mapper.DemoMapper;
-import com.jumota.uoolo.auth.service.DemoService;
-import lombok.AllArgsConstructor;
+import com.uoolo.jumota.auth.entity.Demo;
+import com.uoolo.jumota.auth.mapper.DemoMapper;
+import com.uoolo.jumota.auth.service.DemoService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
