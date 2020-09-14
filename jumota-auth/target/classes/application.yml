@@ -1,0 +1,19 @@
+server:
+  port: 9001
+
+
+spring:
+  application:
+    name: jumota-auth
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: testcloud
+      password: SaTe8sttM2ssn74K
+      url: jdbc:mysql://111.231.87.80:3306/testcloud?characterEncoding=utf8&useSSL=false&useUnicode=true
+      # &zeroDateTimeBehavior=convertToNull&useSSL=false&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=GMT%2B8&allowMultiQueries=true&allowPublicKeyRetrieval=true
+
+  mybatis:
+    mapperLocations: classpath:mapper/*.xml
+    type-aliases-package: com.jumota.uoolo.auth.entity
