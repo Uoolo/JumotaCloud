@@ -11,6 +11,7 @@
   <modules>
     <module>jumota-auth</module>
     <module>jumota-common</module>
+    <module>jumota-demo</module>
   </modules>
 
   <packaging>pom</packaging>
