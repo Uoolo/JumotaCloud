@@ -7,9 +7,12 @@
   <groupId>com.uoolo.jumotacloud</groupId>
   <artifactId>JumotaCloud</artifactId>
   <version>1.0-SNAPSHOT</version>
+
   <modules>
     <module>jumota-auth</module>
+    <module>jumota-common</module>
   </modules>
+
   <packaging>pom</packaging>
   <name>JumotaCloud</name>
   <url>https://www.jumota.com/</url>
