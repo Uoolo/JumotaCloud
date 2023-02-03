@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: ${NC_ADDR:localhost:8848}
+        file-extension: yaml
+        namespace: ${NC_NAMESPACE:92be2381-060f-4fef-b19c-fa5e36e5141c}
+        group: search
+        username: ${NC_USERNAME:nacos}
+        password: ${NC_PASSWORD:nacos}
+  application:
+    name: jumota-demo-service
