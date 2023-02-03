@@ -1,1 +1,4 @@
 /.idea/
+/jumota-auth/target/
+/jumota-common/target/
+/jumota-demo/target/
